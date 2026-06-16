@@ -24,7 +24,7 @@ export default (async () => {
     },
 
     "experimental.text.complete": async (_input, output) => {
-      if (/^\(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\)/.test(output.text)) return
+      if (/^\(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\)\n/.test(output.text)) return
       const ts = formatTimestamp(new Date())
       output.text = ts + "\n" + output.text
     },
