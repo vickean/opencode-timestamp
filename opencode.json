@@ -4,6 +4,5 @@
     "general": {
       "model": "opencode/deepseek-v4-flash-free"
     }
-  },
-  "plugin": ["./plugin.ts"]
+  }
 }
