@@ -11,7 +11,8 @@ function formatTimestamp(date: Date): string {
   return `(${y}-${M}-${d}T${h}:${m}:${s})`
 }
 
-const TIMESTAMP_RE = /^\(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\)\n/
+const TIMESTAMP_RE = /^\[call \d+\] \(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\)\n/
+let debugCount = 0
 
 export default (async () => {
   return {
@@ -24,8 +25,9 @@ export default (async () => {
     },
 
     "experimental.text.complete": async (_input, output) => {
+      debugCount++
       const ts = formatTimestamp(new Date())
-      output.text = ts + "\n" + output.text
+      output.text = `[call ${debugCount}] ` + ts + "\n" + output.text
     },
 
     "experimental.chat.messages.transform": async (_input, output) => {
