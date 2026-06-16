@@ -7,7 +7,7 @@ An OpenCode plugin that prefixes every user and assistant message with an ISO 86
 Add to your `opencode.json`:
 
 ```json
-"plugin": ["opencode-timestamp@git+https://github.com/vickean/opencode-timstamp.git"]
+"plugin": ["opencode-timestamp@git+https://github.com/vickean/opencode-timestamp.git"]
 ```
 
 ## What it does
